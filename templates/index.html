@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ask questions about the fictional Lumen Bikes company.">
+    <title>Lumen Bikes Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">L</div>
+        <div>
+          <p class="eyebrow">Lumen Bikes</p>
+          <h1>Company assistant</h1>
+          <p class="status"><span class="status-dot"></span>PostgreSQL knowledge connected</p>
+        </div>
+      </header>
+
+      <section id="messages" class="messages" aria-live="polite">
+        <article class="message assistant-message">
+          <div class="avatar" aria-hidden="true">L</div>
+          <div class="bubble">
+            <p>Hi! Ask me about Lumen Bikes, including our products, repairs, history, or shipping.</p>
+          </div>
+        </article>
+      </section>
+
+      <div class="suggestions" aria-label="Suggested questions">
+        <button type="button" data-question="What kind of bikes do you make?">Our bicycles</button>
+        <button type="button" data-question="Do you offer paid repairs?">Repair pricing</button>
+        <button type="button" data-question="Where do you ship?">Shipping area</button>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="question">Ask a question</label>
+        <textarea id="question" name="question" rows="1" placeholder="Ask Lumen Bikes a question…" required></textarea>
+        <button id="send-button" type="submit" aria-label="Send question">Send</button>
+      </form>
+      <p class="footer-note">Answers use the single most relevant fact from the local database.</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

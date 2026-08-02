@@ -1,0 +1,11 @@
+# Keep the secret API key out of Git.
+.env
+
+# Ignore the local virtual environment and Python cache files.
+.venv/
+__pycache__/
+*.py[cod]
+
+# Ignore the local PostgreSQL database files and server log.
+.postgres-data/
+.postgres.log
